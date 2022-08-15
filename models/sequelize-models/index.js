@@ -92,9 +92,15 @@ Owner.prototype.getIncompleteTasks = function(){
         name: this.name
       },
     },
-    
   });
 }
+
+Owner.beforeDestroy(owner =>{
+  if (owner.name === 'Grace Hopper'){
+    throw new Error('Not Allowed!');
+  }
+})
+
 
 //---------^^^---------  your code above  ---------^^^----------
 
